@@ -47,6 +47,9 @@ find_package(srdfdom_advr QUIET)
 find_package(OpenSoT QUIET)
 FIND_PACKAGE(XBotInterface QUIET)
 
+#small addition
+find_package(Eigen3 REQUIRED)
+
 
 
 # compilation flags
@@ -68,7 +71,8 @@ endif()
 INCLUDE_DIRECTORIES(include ${orocos_kdl_DIRS} ${kdl_parser_INCLUDE_DIRS}
                             ${Boost_INCLUDE_DIRS}
                             ${roslib_INCLUDE_DIRS} ${tf_INCLUDE_DIRS} ${nav_msgs_INCLUDE_DIRS}
-                            ${rviz_visual_tools_INCLUDE_DIRS})
+                            ${rviz_visual_tools_INCLUDE_DIRS}
+                            ${EIGEN3_INCLUDE_DIRS})
 
 file(GLOB_RECURSE trajectory_utils_INCLUDES
 "${CMAKE_CURRENT_SOURCE_DIR}/include/trajectory_utils" *.h*
